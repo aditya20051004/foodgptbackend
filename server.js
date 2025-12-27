@@ -3,8 +3,7 @@ import cors from "cors";
 
 
 
-const express = require("express");
-const cors = require("cors");
+
 const Groq = require("groq-sdk");
 
 const app = express();
@@ -135,6 +134,7 @@ Do not ask follow-up questions elsewhere.
 const PORT = process.env.PORT || 3000;
 app.listen(PORT , () => {
   console.log("Server running on port", PORT);});
+
 
 
 
