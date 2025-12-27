@@ -1,3 +1,8 @@
+import express from "express";
+import cors from "cors";
+
+
+
 const express = require("express");
 const cors = require("cors");
 const Groq = require("groq-sdk");
@@ -128,6 +133,7 @@ Do not ask follow-up questions elsewhere.
 app.listen(3001, () => {
   console.log("Server running on http://localhost:3001");
 });
+
 
 
 
