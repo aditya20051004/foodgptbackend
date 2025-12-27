@@ -8,9 +8,14 @@ const cors = require("cors");
 const Groq = require("groq-sdk");
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: "*",
+  methods :["GET","POST","OPTIONS"],
+  allowedHeaders: ["Content-Type"]
+}));
 app.options("*", cors());
+app.use(express.json());
+
 
 // 🔴 HARD-CODED KEY (TEMPORARY – JUST TO MAKE IT WORK)
 const groq = new Groq({
@@ -134,6 +139,7 @@ Do not ask follow-up questions elsewhere.
 app.listen(3001, () => {
   console.log("Server running on http://localhost:3001");
 });
+
 
 
 
