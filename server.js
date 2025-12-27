@@ -8,12 +8,8 @@ const cors = require("cors");
 const Groq = require("groq-sdk");
 
 const app = express();
-app.use(cors({
-  origin: "*",
-  methods :["GET","POST","OPTIONS"],
-  allowedHeaders: ["Content-Type"]
-}));
-app.options("*", cors());
+
+app.use(cors());
 app.use(express.json());
 
 
@@ -136,11 +132,9 @@ Do not ask follow-up questions elsewhere.
   }
 });
 
-app.listen(3001, () => {
-  console.log("Server running on http://localhost:3001");
-});
-
-
+const PORT = process.env.PORT || 3000;
+app.listen(PORT , () => {
+  console.log("Server running on port", PORT);});
 
 
 
